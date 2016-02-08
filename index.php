@@ -1,15 +1,12 @@
 <?php
-// Calculator Script v1
+// Calculator Script v2
 // Copyright (C) 2007 RageD
-
 // Define to make this all one document
 $page = $_GET['page'];
-
 // Defining the "calc" class
 class calc {
      var $number1;
      var $number2;
-
           function add($number1,$number2)
           {
                    $result =$number1 + $number2;
@@ -17,7 +14,6 @@ class calc {
                     echo("$number1 + $number2 = $result");
                     exit;
            }
-
           function subtract($number1,$number2)
           {
                    $result =$number1 - $number2;
@@ -25,15 +21,28 @@ class calc {
                     echo("$number1 &#045 $number2 = $result");
                     exit;
            }
-
+          function divide($number1,$number2)
+          {
+                   $result =$number1 / $number2;
+                    echo("$number1 divided by $number2 is $result<br><br>");
+                    echo("$number1 ▒ $number2 = $result");
+                    exit;
+           }
+          function multiply($number1,$number2)
+          {
+                   $result =$number1 * $number2;
+                    echo("The product of $number1 and $number2 is $result<br><br>");
+                    echo("$number1 x $number2 = $result");
+                    exit;
+           }
 }
 $calc = new calc();
 ?>
-<TITLE>PHP Calculator v1</TITLE>
+<TITLE>PHP Calculator v2</TITLE>
 <form name="calc" action="?page=calc" method="POST">
 Number 1: <input type=text name=value1><br>
 Number 2: <input type=text name=value2><br>
-Operation: <input type=radio name=oper value="add">Addition <input type=radio name=oper value="subtract">Subtraction</input><br>
+Operation: <input type=radio name=oper value="add">Addition <input type=radio name=oper value="subtract">Subtraction <input type=radio name=oper value="divide">Division <input type=radio name=oper value="multiply">Multiplication</input><br>
 <input type=submit value="Calculate">
 </form>
 <?php
@@ -66,6 +75,12 @@ $oper = $_POST['oper'];
      }
      if($oper == "subtract"){
           $calc->subtract($number1,$number2);
+     }
+     if($oper == "divide"){
+          $calc->divide($number1,$number2);
+     }
+     if($oper == "multiply"){
+          $calc->multiply($number1,$number2);
      }
 }
 ?>
