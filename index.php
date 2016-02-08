@@ -2,6 +2,7 @@
 // Calculator Script v1
 // Copyright (C) 2007 RageD
 // Define to make this all one document
+//Novelle modif
 $page = $_GET['page'];
 // Defining the "calc" class
 class calc {
