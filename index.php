@@ -1,5 +1,5 @@
 <?php
-// Calculator Script v2
+// Calculator Script v1
 // Copyright (C) 2007 RageD
 // Define to make this all one document
 $page = $_GET['page'];
